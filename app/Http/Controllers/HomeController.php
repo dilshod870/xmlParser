@@ -6,7 +6,7 @@ use App\Models\Catalog;
 
 class HomeController extends Controller
 {
-    function index($file = 'data_light.xml')
+    function index(string $file = 'data_light.xml'): void
     {
         $xmlFile = file_get_contents(public_path($file));
         $xmlObject = simplexml_load_string($xmlFile);
